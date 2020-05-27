@@ -12,7 +12,7 @@ Then, in the run_it.slurm file change the working directory to the your franc di
 
 Then, change the SCRDIR to have your uID instead of mine.
 
-Download the folders inp_files and odb_files and put them in your scratch directory or /scratch/kingspeak/serial/YOURUID/franc/
+Download the folder "inp_files" from my folder in files4jonas in the google drive and put them in your scratch directory or /scratch/kingspeak/serial/YOURUID/franc/
 
 Download standard_channel_L10_4.inp and place it in this directory.
 
