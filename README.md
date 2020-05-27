@@ -1,5 +1,4 @@
 # franc
-franc aspect of masters thesis
 
 clone this directory onto your chpc account
 
