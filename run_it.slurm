@@ -16,7 +16,7 @@ export SCDIR=/scratch/kingspeak/serial/u0823391/franc/$SLURM_JOBID
 mkdir -p $SCDIR
 cp -r * $SCDIR
 cd $SCDIR
-cp ../inp_files/* ./
+cp ../inp_files/r0015s001t002l0015.inp ./
 echo Working in $SCDIR
 # load appropriate modules, in this case Intel compilers, MPICH2
 module load abaqus/2019
