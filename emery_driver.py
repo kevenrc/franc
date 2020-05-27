@@ -153,7 +153,7 @@ def insert_and_grow_crack(root_name, retained_elems_filename, init_crack_size,
 	initiateModel()
 
 	temp_step = median_step_size
-	tempInc = template_radius
+	tempInc = (median_step_size/10) * i
 	temp_poly_order = poly_order 
 	temp_ex_A = ex_A
 	temp_ex_B = ex_B
