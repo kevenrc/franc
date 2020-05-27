@@ -10,6 +10,8 @@ conda create --name py2 --file requirements.txt
 
 Then, in the run_it.slurm file change the working directory to the your franc directory
 
+In both slurm files change the email near the top to your email if you want emails when it ends and fails
+
 Then, change the SCRDIR to have your uID instead of mine.
 
 Download the folder "inp_files" from my folder in files4jonas in the google drive and put them in your scratch directory or /scratch/kingspeak/serial/YOURUID/franc/
