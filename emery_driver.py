@@ -183,7 +183,7 @@ def insert_and_grow_crack(root_name, retained_elems_filename, init_crack_size,
 		# Close and reopen f3d model
 		f3d.CloseModel()
 		lastFName =  root_name + '_crack_STEP_{:03}'.format(i-1)
-		openModel(lastFName)
+		openModel(lastFName, orig_mesh_file, global_file)
 		initiateModel()
 		continue
 	    else:
