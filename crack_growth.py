@@ -10,12 +10,12 @@ from emery_driver import *
 original_mesh_file = 'standard_channel_L10_4.inp'
 retained_elems_filename = 'RETAINED_ELEMS_chamfer.txt'
 init_crack_size = 0.05
-previous_step = 2
-steps = 8
+previous_step = 1
+steps = 9
 median_step_size = 0.24
 template_radius = 0.01
 poly_order = 3
-ex_A, ex_B = 8, 8
+ex_A, ex_B = 5, 5
 smoothing_method = "CUBIC_SPLINE"
 discard_ = 2
 exe = 'abaqus'
@@ -24,12 +24,12 @@ num_processors = 16
 
 df = pd.read_csv('uncracked_results.csv')
 
-for odb_filename in glob.glob('*.odb'):
+for inp_filename in glob.glob('*00*.inp'):
 
 #    odb_filename = load+'.odb'
-    base_odb_filename = os.path.basename(odb_filename)
-    root_name = base_odb_filename.replace('.odb', '')
-    root_filename = odb_filename.replace('.odb', '').replace('odb_files', 'inp_files')
+    base_inp_filename = os.path.basename(inp_filename)
+    root_name = base_inp_filename.replace('.odb', '')
+    root_filename = inp_filename.replace('.odb', '').replace('odb_files', 'inp_files')
 
     results = df[df['root_name'] == root_name]
 
@@ -44,4 +44,4 @@ for odb_filename in glob.glob('*.odb'):
 
     insert_and_grow_crack(root_name, retained_elems_filename, init_crack_size,
 	    crack_location, rotation, previous_step, steps, median_step_size, template_radius,
-	    poly_order, ex_A, ex_B, smoothing_method, discard_, exe, num_processors, initial_crack=False)
+	    poly_order, ex_A, ex_B, smoothing_method, discard_, exe, num_processors, initial_crack=True)

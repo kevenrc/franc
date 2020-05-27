@@ -13,11 +13,10 @@
 export WORKDIR=/uufs/chpc.utah.edu/common/home/u0823391/Desktop/standard_channel/franc
 export SCDIR=/scratch/kingspeak/serial/u0823391/franc/$SLURM_JOBID
 
-export PYTHONPATH=$PYTHONPATH:/uufs/chpc.utah.edu/common/home/u0823391/Desktop/standard_channel/
 mkdir -p $SCDIR
 cp -r * $SCDIR
 cd $SCDIR
-cp ../inp_files/r0015s001t002l0015.inp ../odb_files/r0015s001t002l0015.odb ./
+cp ../inp_files/* 
 echo Working in $SCDIR
 # load appropriate modules, in this case Intel compilers, MPICH2
 module load abaqus/2019

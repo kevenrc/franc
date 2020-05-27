@@ -13,7 +13,6 @@
 export WORKDIR=/uufs/chpc.utah.edu/common/home/u0823391/Desktop/standard_channel/franc
 export SCDIR=/scratch/kingspeak/serial/u0823391/franc/1368040
 
-export PYTHONPATH=$PYTHONPATH:/uufs/chpc.utah.edu/common/home/u0823391/Desktop/standard_channel/
 #mkdir -p $SCDIR
 #cp -r * $SCDIR
 cd $SCDIR
