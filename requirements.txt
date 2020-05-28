@@ -5,7 +5,7 @@ _libgcc_mutex=0.1=main
 blas=1.0=mkl
 ca-certificates=2019.5.15=1
 certifi=2019.6.16=py27_1
-intel-openmp=2019.5=281
+#intel-openmp=2019.5=281
 libedit=3.1.20181209=hc058e9b_0
 libffi=3.2.1=hd88cf55_4
 libgcc-ng=9.1.0=hdf63c60_0
