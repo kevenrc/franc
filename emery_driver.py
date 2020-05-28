@@ -21,7 +21,7 @@ median_step_size = 0.17
 init_crack_size = 0.05
 template_radius = 0.01
 poly_order=3
-discard_=2
+discard_=0
 ex_A,ex_B = 14, 14
 location = [0., -2.75, 6.45]
 rotation = [89, 67]
@@ -201,4 +201,4 @@ def insert_and_grow_crack(root_name, retained_elems_filename, init_crack_size,
 	    command='{} job={}_crack_STEP_{:03}_full cpus={} -interactive -analysis'.format(exe, root_name, i, num_processors),
 	    global_model=global_file)
 
-	#os.system('rm *STEP_{:03}_full*'.format(i-1)) # delete the previous files
+	#os.system('rm *STEP_{:03}*.lck'.format(i-1)) # delete the previous files

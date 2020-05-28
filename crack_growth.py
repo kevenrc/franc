@@ -16,13 +16,14 @@ median_step_size = 0.24
 template_radius = 0.01
 poly_order = 3
 ex_A, ex_B = 5, 5
-smoothing_method = "CUBIC_SPLINE"
-discard_ = 2
+smoothing_method = "FIXED_ORDER_POLY"
+discard_ = 0
 exe = 'abaqus'
-num_processors = 16
+num_processors = 8
 #############
 
 df = pd.read_csv('uncracked_results.csv')
+
 
 for inp_filename in glob.glob('*00*.inp'):
 
@@ -45,3 +46,4 @@ for inp_filename in glob.glob('*00*.inp'):
     insert_and_grow_crack(root_name, retained_elems_filename, init_crack_size,
 	    crack_location, rotation, previous_step, steps, median_step_size, template_radius,
 	    poly_order, ex_A, ex_B, smoothing_method, discard_, exe, num_processors, initial_crack=True)
+
