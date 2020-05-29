@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from shutil import copyfile
 import sys
 import os
 import glob
@@ -22,19 +23,18 @@ exe = 'abaqus'
 num_processors = 8
 #############
 
-df = pd.read_csv('uncracked_results.csv')
+df = pd.read_csv('results_batches/uncracked_results1.csv')
 
 
-for inp_filename in glob.glob('*00*.inp'):
+for root_name in df['root_name']:
 
 #    odb_filename = load+'.odb'
-    base_inp_filename = os.path.basename(inp_filename)
-    root_name = base_inp_filename.replace('.inp', '')
-    root_filename = inp_filename.replace('.inp', '').replace('odb_files', 'inp_files')
+    copyfile(''.join(['../inp_files/', root_name, '.inp']), ''.join([root_name, '.inp']))
 
     results = df[df['root_name'] == root_name]
 
-    crack_location = list(np.round(results[['loc_x', 'loc_y', 'loc_z']], 1).to_numpy().flatten())
+#    crack_location = list(np.round(results[['loc_x', 'loc_y', 'loc_z']], 2).to_numpy().flatten())
+    crack_location = [0.0, -2.82, 6.45]
     direction = list(results[['dir_x', 'dir_y', 'dir_z']].to_numpy().flatten())
     print(crack_location)
     print(direction)
